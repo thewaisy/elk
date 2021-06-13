@@ -1,0 +1,7 @@
+- pipeline.id: appsflyer-push
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/appsflyer_push.conf"
+
+- pipeline.id: raw-client-log
+  pipeline.workers: 1
+  path.config: "/usr/share/logstash/pipeline/raw_client_log.conf"

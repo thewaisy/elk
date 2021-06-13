@@ -1,0 +1,17 @@
+version: '3.9'
+networks:
+  data:
+    external:
+      name: waisy
+
+services:
+  logstash:
+    container_name: logstash
+    build: .
+    networks:
+      - data
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+    # restart: always
